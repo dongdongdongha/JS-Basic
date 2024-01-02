@@ -137,3 +137,38 @@ const minusResult = calculator.plus(2, 3); //뺄셈 값 저장
 const timesResult = calculator.plus(2, 3); //곱셈 값 저장
 const divideResult = calculator.plus(2, 3); //나눗셈 값 저장
 const powerResult = calculator.plus(2, 3); //제곱 값 저장
+
+const agee = prompt("How old are you?"); //prompt: function으로 사용자에게 창을 띄워줌(scanf)
+console.log(typeof agee); //typeof: 문자형인지 정수형인지 등을 알 수있음
+console.log(parseInt(agee)); //parseInt: 정수형으로 형변환 (숫자를 넣지않으면 NaN값을 내보냄)
+
+const agee1 = parseInt(prompt("how old are you?")); //정수형으로 문자를 받기
+
+console.log(isNaN(agee1)); //isNaN: NaN의 값일때 true / 아닐때 false
+
+// if(isNaN(agee1)){
+//   console.log("please write a number");
+// }else{
+//   console.log("thank you for writing your age");
+// }
+
+if (isNaN(agee1) || age < 0) {
+  //&&: and기호표, ||: or기호표
+  console.log("please write a number");
+} else if (agee1 < 18) {
+  console.log("u r young");
+} else if (agee1 >= 18 && age <= 50) {
+  //&&: and기호표, ||: or기호표
+  console.log("u can drink");
+} else if (agee1 > 50 && age <= 80) {
+  console.log("u should exercise");
+} else if (agee1 === 100) {
+  //=== : 같다 기호
+  console.log("wow yout are wish");
+} else if (agee1 > 80) {
+  console.log("you can do whatever you want");
+}
+
+// if((a && b) || (c && d) || (x || w)){
+// 이런식의 코드 작성가능
+// }
