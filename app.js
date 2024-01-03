@@ -168,7 +168,59 @@ if (isNaN(agee1) || age < 0) {
 } else if (agee1 > 80) {
   console.log("you can do whatever you want");
 }
-
 // if((a && b) || (c && d) || (x || w)){
 // 이런식의 코드 작성가능
 // }
+
+// const title = document.getElementById("title");// h1 id=title에 있는 내용 가져올 수 잇다.
+// console.dir(title); //.dir: element를 더 자세하게 보여줌
+// title.innerText = "got you!"; // id가 title인 태그에 내용을 바꿈
+// console.log(title.id);//id이름 출력
+// console.log(title.className);//class이름 출력
+
+// const hellos = document.getElementsByClassName("hello"); //className이 hello인 h1들을 리스트로 만들기
+// console.log(hellos); // 리스트 출력
+
+// const title = document.getElementsByTagName("h1"); // h1 한개 가져오기
+// console.log(title);//출력
+
+// const title = document.querySelector(".hello h1"); //class 내부에 있는 h1 가져오기(첫번째것만 / 전부: querySelectorAll)
+// console.log(title);//출력
+// title.style.color = "blue"; //h1 style변경
+
+const title = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+  title.style.color = "blue"; //색변경
+}
+function handleMouseLeave() {
+  title.innerText = "Mouse is gone!"; // 내용변경
+}
+function handleMouseEnter() {
+  title.innerText = "Mouse is here!"; // 내용변경
+}
+function handleWindowResize() {
+  document.body.style.backgroundColor = "tomato"; //백그라운드 색 변경
+}
+function handleWindowCopy() {
+  alert("copier!"); //경고문
+}
+function handleWindowOffline() {
+  alert("SOS no WIFI"); //경고문
+}
+function handleWindowOnline() {
+  alert("All Good!"); //경고문
+}
+
+title.addEventListener("click", handleTitleClick); //click이벤트가 발생했을 때
+title.addEventListener("mouseenter", handleMouseEnter); //마우스를 가져다댔을 때
+title.addEventListener("mouseleave", handleMouseLeave); //마우스가 떠났을 때
+
+// title.onclick = handleTitleClick; // 다른 이벤트 형식
+// title.onmouseenter = handleMouseEnter; // 다른 이벤트 형식
+// title.onmouseleave = handleMouseLeave; // 다른 이벤트 형식
+
+window.addEventListener("resize", handleWindowResize); //크기가 바뀔 때
+window.addEventListener("copy", handleWindowCopy); //복사 시
+window.addEventListener("offline", handleWindowOffline); //와이파이 연결안될 때
+window.addEventListener("offline", handleWindowOnline); //와이파이 연결될 때
