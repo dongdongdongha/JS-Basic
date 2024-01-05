@@ -190,37 +190,60 @@ if (isNaN(agee1) || age < 0) {
 
 const title = document.querySelector("div.hello:first-child h1");
 
-function handleTitleClick() {
-  title.style.color = "blue"; //색변경
-}
-function handleMouseLeave() {
-  title.innerText = "Mouse is gone!"; // 내용변경
-}
-function handleMouseEnter() {
-  title.innerText = "Mouse is here!"; // 내용변경
-}
-function handleWindowResize() {
-  document.body.style.backgroundColor = "tomato"; //백그라운드 색 변경
-}
-function handleWindowCopy() {
-  alert("copier!"); //경고문
-}
-function handleWindowOffline() {
-  alert("SOS no WIFI"); //경고문
-}
-function handleWindowOnline() {
-  alert("All Good!"); //경고문
-}
+// function handleTitleClick() {
+//   title.style.color = "blue"; //색변경
+// }
+// function handleMouseLeave() {
+//   title.innerText = "Mouse is gone!"; // 내용변경
+// }
+// function handleMouseEnter() {
+//   title.innerText = "Mouse is here!"; // 내용변경
+// }
+// function handleWindowResize() {
+//   document.body.style.backgroundColor = "tomato"; //백그라운드 색 변경
+// }
+// function handleWindowCopy() {
+//   alert("copier!"); //경고문
+// }
+// function handleWindowOffline() {
+//   alert("SOS no WIFI"); //경고문
+// }
+// function handleWindowOnline() {
+//   alert("All Good!"); //경고문
+// }
 
-title.addEventListener("click", handleTitleClick); //click이벤트가 발생했을 때
-title.addEventListener("mouseenter", handleMouseEnter); //마우스를 가져다댔을 때
-title.addEventListener("mouseleave", handleMouseLeave); //마우스가 떠났을 때
+// title.addEventListener("click", handleTitleClick); //click이벤트가 발생했을 때
+// title.addEventListener("mouseenter", handleMouseEnter); //마우스를 가져다댔을 때
+// title.addEventListener("mouseleave", handleMouseLeave); //마우스가 떠났을 때
 
 // title.onclick = handleTitleClick; // 다른 이벤트 형식
 // title.onmouseenter = handleMouseEnter; // 다른 이벤트 형식
 // title.onmouseleave = handleMouseLeave; // 다른 이벤트 형식
 
-window.addEventListener("resize", handleWindowResize); //크기가 바뀔 때
-window.addEventListener("copy", handleWindowCopy); //복사 시
-window.addEventListener("offline", handleWindowOffline); //와이파이 연결안될 때
-window.addEventListener("offline", handleWindowOnline); //와이파이 연결될 때
+// window.addEventListener("resize", handleWindowResize); //크기가 바뀔 때
+// window.addEventListener("copy", handleWindowCopy); //복사 시
+// window.addEventListener("offline", handleWindowOffline); //와이파이 연결안될 때
+// window.addEventListener("offline", handleWindowOnline); //와이파이 연결될 때
+
+// function handleTitleClick() {//파란색일때 누르면 토마토로 아닐때 누르면 파란색으로 색 변경
+//   const crColor = h1.style.color;
+//   let newColor;
+//   if (crColor == "blue") {
+//     newColor = "tomato";
+//   } else {
+//     newColor = "blue";
+//   }
+//   h1.style.color = newColor;
+// }
+
+function handleTitleClick() {
+  // const clcl = "active";
+  // if (h1.classList.contains(clcl)) {
+  //   h1.classList.remove(clcl); //css에서 active가 불러와져있을 때 초기화
+  // } else {
+  //   h1.classList.add(clcl); //css에서 active를 불러와 실행
+  // }//=toggle
+  h1.classList.toggle("active");
+}
+
+title.addEventListener("click", handleTitleClick); //click이벤트가 발생했을 때
